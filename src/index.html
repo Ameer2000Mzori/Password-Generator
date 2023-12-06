@@ -18,7 +18,40 @@
     />
   </head>
   <body>
-    <h1>start of project</h1>
+    <header class="header">
+      <div class="head-Wrap">
+        <h3>Password Generator</h3>
+        <div class="copy-Text-Wrap">
+          <input type="number" />
+          <button class="copy-Pass-Btn">
+            <i class="fa-solid fa-copy"></i>
+          </button>
+        </div>
+        <div class="choice-Wrap">
+          <div class="box-Choice password-Length">
+            <p>Password Length</p>
+            <input class="length-Of-Pass" type="number" />
+          </div>
+          <div class="box-Choice upperCase-Box">
+            <p>Include UpperCase letters ?</p>
+            <input class="upperCase-Check" type="checkbox" />
+          </div>
+          <div class="box-Choice LowerCase-Box">
+            <p>Include LowerCase letters ?</p>
+            <input class="LowerCase-Check" type="checkbox" />
+          </div>
+          <div class="box-Choice numbers-Box">
+            <p>Include numbers ?</p>
+            <input class="numbers-Check" type="checkbox" />
+          </div>
+          <div class="box-Choice symbols-Box">
+            <p>Include symbols ?</p>
+            <input class="symbols-Check" type="checkbox" />
+          </div>
+        </div>
+        <button class="generate-Pass">Generate Password</button>
+      </div>
+    </header>
     <script src="script.js"></script>
   </body>
 </html>
