@@ -1,5 +1,5 @@
 // selected elements
-const copyBox: any = document.getElementsByClassName("number-Input")[0];
+let copyBox: any = document.getElementsByClassName("number-Input")[0];
 const lengthOfPass = document.getElementsByClassName("length-Of-Pass")[0];
 
 // selected check elements
@@ -16,6 +16,12 @@ const copyPassBtn = document.getElementsByClassName("copy-Pass-Btn")[0];
 const generatePassBtn = document.getElementsByClassName("generate-Pass")[0];
 
 //gelobal variables
+let upperCase: boolean = false;
+let LowerCase: boolean = false;
+let numbersCase: boolean = false;
+let symbolsCase: boolean = false;
+let CheckedBoxTrue: number = 1;
+let checkArr: string[] = [];
 
 // functions
 
@@ -30,14 +36,23 @@ const copyPassword = (): void => {
 };
 
 // generatePassword function
-const generatePassword = () => {};
+const generatePassword = (boxCheck) => {
+  console.log(boxCheck.checked);
+  console.log(boxCheck.value);
+  console.log(CheckedBoxTrue);
+  console.log(checkArr);
+};
 
 // event lisnters
 copyPassBtn.addEventListener("click", copyPassword);
 generatePassBtn.addEventListener("click", () => {
+  CheckedBoxTrue = 1;
+  checkArr = [];
   for (let boxCheck of checkedBoxes) {
     if (boxCheck.checked) {
-      console.log(boxCheck.value);
+      generatePassword(boxCheck);
+      checkArr.push(`${boxCheck.value}`);
+      CheckedBoxTrue++;
     }
   }
 });

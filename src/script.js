@@ -11,6 +11,12 @@ var checkedBoxes = document.querySelectorAll("#checked-Box");
 var copyPassBtn = document.getElementsByClassName("copy-Pass-Btn")[0];
 var generatePassBtn = document.getElementsByClassName("generate-Pass")[0];
 //gelobal variables
+var upperCase = false;
+var LowerCase = false;
+var numbersCase = false;
+var symbolsCase = false;
+var CheckedBoxTrue = 1;
+var checkArr = [];
 // functions
 // copy password function
 var copyPassword = function () {
@@ -21,14 +27,23 @@ var copyPassword = function () {
     console.log(copyBox.value);
 };
 // generatePassword function
-var generatePassword = function () { };
+var generatePassword = function (boxCheck) {
+    console.log(boxCheck.checked);
+    console.log(boxCheck.value);
+    console.log(CheckedBoxTrue);
+    console.log(checkArr);
+};
 // event lisnters
 copyPassBtn.addEventListener("click", copyPassword);
 generatePassBtn.addEventListener("click", function () {
+    CheckedBoxTrue = 1;
+    checkArr = [];
     for (var _i = 0, checkedBoxes_1 = checkedBoxes; _i < checkedBoxes_1.length; _i++) {
         var boxCheck = checkedBoxes_1[_i];
         if (boxCheck.checked) {
-            console.log(boxCheck.value);
+            generatePassword(boxCheck);
+            checkArr.push("".concat(boxCheck.value));
+            CheckedBoxTrue++;
         }
     }
 });
