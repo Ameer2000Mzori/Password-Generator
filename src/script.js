@@ -68,7 +68,7 @@ var copyPassword = function () {
     copyBox.setSelectionRange(0, 99999); // For mobile devices
     // Copy the text inside the text field
     navigator.clipboard.writeText(copyBox.value);
-    console.log(copyBox.value);
+    console.log("copied random password : ", copyBox.value);
 };
 // our eventlinsters
 generatePassBtn.addEventListener("click", logicLoopFunction);

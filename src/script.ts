@@ -78,7 +78,7 @@ const copyPassword = (): void => {
 
   // Copy the text inside the text field
   navigator.clipboard.writeText(copyBox.value);
-  console.log(copyBox.value);
+  console.log("copied random password : ", copyBox.value);
 };
 
 // our eventlinsters
