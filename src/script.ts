@@ -3,10 +3,13 @@ const copyBox: any = document.getElementsByClassName("number-Input")[0];
 const lengthOfPass = document.getElementsByClassName("length-Of-Pass")[0];
 
 // selected check elements
-const upperCaseCheck = document.getElementsByClassName("upperCase-Check")[0];
-const LowerCaseCheck = document.getElementsByClassName("LowerCase-Check")[0];
-const numbersCheck = document.getElementsByClassName("numbers-Check")[0];
-const symbolsCheck = document.getElementsByClassName("symbols-Check")[0];
+const upperCaseCheck: any =
+  document.getElementsByClassName("upperCase-Check")[0];
+const LowerCaseCheck: any =
+  document.getElementsByClassName("LowerCase-Check")[0];
+const numbersCheck: any = document.getElementsByClassName("numbers-Check")[0];
+const symbolsCheck: any = document.getElementsByClassName("symbols-Check")[0];
+const checkedBoxes: any = document.querySelectorAll("#checked-Box");
 
 // seleted buttons
 const copyPassBtn = document.getElementsByClassName("copy-Pass-Btn")[0];
@@ -26,5 +29,15 @@ const copyPassword = (): void => {
   console.log(copyBox.value);
 };
 
+// generatePassword function
+const generatePassword = () => {};
+
 // event lisnters
 copyPassBtn.addEventListener("click", copyPassword);
+generatePassBtn.addEventListener("click", () => {
+  for (let boxCheck of checkedBoxes) {
+    if (boxCheck.checked) {
+      console.log(boxCheck.value);
+    }
+  }
+});
