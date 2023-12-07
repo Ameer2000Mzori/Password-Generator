@@ -3,9 +3,9 @@
 $fontOne: "Roboto", sans-serif;
 $fontTwo: "Kenia", sans-serif;
 
-$colorOne: #ffa732;
-$colorTwo: #c21292;
-$colorThree: #711db0;
+$colorOne: #191919;
+$colorTwo: #750e21;
+$colorThree: #bed754;
 
 body {
   padding: 0;
@@ -19,7 +19,26 @@ body {
   align-items: center;
   justify-content: center;
   font-family: $fontOne;
-  background-color: $colorThree;
-  color: $colorOne;
+  background-color: $colorOne;
+  color: $colorThree;
   height: 100vh;
+
+  .head-Tile {
+    font-size: 25px;
+    font-weight: 600;
+    padding: 5px;
+  }
+
+  .head-Wrap {
+    height: 600px;
+    width: 350px;
+    background-color: $colorTwo;
+    border-radius: 15px;
+    border: solid $colorThree 3px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 }

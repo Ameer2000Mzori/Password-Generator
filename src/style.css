@@ -12,7 +12,26 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Roboto", sans-serif;
-  background-color: #711db0;
-  color: #ffa732;
+  background-color: #191919;
+  color: #bed754;
   height: 100vh;
+}
+
+.header .head-Tile {
+  font-size: 25px;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.header .head-Wrap {
+  height: 600px;
+  width: 350px;
+  background-color: #750e21;
+  border-radius: 15px;
+  border: solid #bed754 3px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
 }
