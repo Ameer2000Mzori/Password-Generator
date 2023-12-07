@@ -87,3 +87,29 @@ body {
   color: #bed754;
   background-color: #191919;
 }
+
+.header .head-Wrap .choice-Wrap {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+}
+
+.header .head-Wrap .choice-Wrap .box-Choice {
+  display: flex;
+  width: 90%;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #191919;
+  padding: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  color: #bed754;
+}
