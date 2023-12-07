@@ -1,5 +1,5 @@
 // selected elements
-const copyBox = document.getElementsByClassName("number-Input")[0];
+const copyBox: any = document.getElementsByClassName("number-Input")[0];
 const lengthOfPass = document.getElementsByClassName("length-Of-Pass")[0];
 
 // selected check elements
@@ -16,4 +16,15 @@ const generatePassBtn = document.getElementsByClassName("generate-Pass")[0];
 
 // functions
 
+// copy password function
+const copyPassword = (): void => {
+  copyBox.select();
+  copyBox.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyBox.value);
+  console.log(copyBox.value);
+};
+
 // event lisnters
+copyPassBtn.addEventListener("click", copyPassword);
