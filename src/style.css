@@ -76,6 +76,7 @@ body {
   border: none;
   color: #bed754;
   background-color: #191919;
+  transition: all 250ms ease-out;
 }
 
 .header .head-Wrap .copy-Text-Wrap .copy-Pass-Btn:hover {
@@ -112,4 +113,32 @@ body {
   padding-bottom: 2px;
   border-radius: 5px;
   color: #bed754;
+}
+
+.header .head-Wrap .generate-Pass {
+  width: 90%;
+  height: 7%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-weight: 900;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  border: none;
+  color: #bed754;
+  background-color: #191919;
+  transition: all 250ms ease-out;
+}
+
+.header .head-Wrap .generate-Pass:hover {
+  color: #191919;
+  background-color: #bed754;
+}
+
+.header .head-Wrap .generate-Pass:active {
+  color: #bed754;
+  background-color: #191919;
 }
