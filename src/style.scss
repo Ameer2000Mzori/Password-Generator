@@ -3,7 +3,23 @@
 $fontOne: "Roboto", sans-serif;
 $fontTwo: "Kenia", sans-serif;
 
+$colorOne: #ffa732;
+$colorTwo: #c21292;
+$colorThree: #711db0;
+
 body {
   padding: 0;
   margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: $fontOne;
+  background-color: $colorThree;
+  color: $colorOne;
+  height: 100vh;
 }
