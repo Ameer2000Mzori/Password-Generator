@@ -5,6 +5,16 @@ const checkedBoxes: any = document.querySelectorAll("#checked-Box");
 const copyPassBtn = document.getElementsByClassName("copy-Pass-Btn")[0];
 const generatePassBtn = document.getElementsByClassName("generate-Pass")[0];
 
+// our selected check boxes
+const upperCaseCheck = document.getElementsByClassName(
+  "upperCase-Check"
+)[0] as any;
+const lowerCaseCheck = document.getElementsByClassName(
+  "LowerCase-Check"
+)[0] as any;
+const numbersCheck = document.getElementsByClassName("numbers-Check")[0] as any;
+const symbolsCheck = document.getElementsByClassName("symbols-Check")[0] as any;
+
 //gelobal variables
 let generatedPassword: string;
 let lengthOfPassWord: number;
@@ -82,5 +92,23 @@ const copyPassword = (): void => {
 };
 
 // our eventlinsters
-generatePassBtn.addEventListener("click", logicLoopFunction);
+generatePassBtn.addEventListener("click", () => {
+  // check first if any box is checked else dont run the code
+  if (
+    !upperCaseCheck.checked &&
+    !lowerCaseCheck.checked &&
+    !numbersCheck.checked &&
+    !symbolsCheck.checked
+  ) {
+    console.log("Nothing is checked.");
+  } else {
+    console.log(
+      upperCaseCheck.checked,
+      lowerCaseCheck.checked,
+      numbersCheck.checked,
+      symbolsCheck.checked
+    );
+    logicLoopFunction();
+  }
+});
 copyPassBtn.addEventListener("click", copyPassword);

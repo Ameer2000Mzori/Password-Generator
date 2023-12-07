@@ -4,6 +4,11 @@ var lengthOfPass = document.getElementsByClassName("length-Of-Pass")[0];
 var checkedBoxes = document.querySelectorAll("#checked-Box");
 var copyPassBtn = document.getElementsByClassName("copy-Pass-Btn")[0];
 var generatePassBtn = document.getElementsByClassName("generate-Pass")[0];
+// our selected check boxes
+var upperCaseCheck = document.getElementsByClassName("upperCase-Check")[0];
+var lowerCaseCheck = document.getElementsByClassName("LowerCase-Check")[0];
+var numbersCheck = document.getElementsByClassName("numbers-Check")[0];
+var symbolsCheck = document.getElementsByClassName("symbols-Check")[0];
 //gelobal variables
 var generatedPassword;
 var lengthOfPassWord;
@@ -71,5 +76,17 @@ var copyPassword = function () {
     console.log("copied random password : ", copyBox.value);
 };
 // our eventlinsters
-generatePassBtn.addEventListener("click", logicLoopFunction);
+generatePassBtn.addEventListener("click", function () {
+    // check first if any box is checked else dont run the code
+    if (!upperCaseCheck.checked &&
+        !lowerCaseCheck.checked &&
+        !numbersCheck.checked &&
+        !symbolsCheck.checked) {
+        console.log("Nothing is checked.");
+    }
+    else {
+        console.log(upperCaseCheck.checked, lowerCaseCheck.checked, numbersCheck.checked, symbolsCheck.checked);
+        logicLoopFunction();
+    }
+});
 copyPassBtn.addEventListener("click", copyPassword);
