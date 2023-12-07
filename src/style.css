@@ -17,12 +17,6 @@ body {
   height: 100vh;
 }
 
-.header .head-Tile {
-  font-size: 25px;
-  font-weight: 600;
-  padding: 5px;
-}
-
 .header .head-Wrap {
   height: 600px;
   width: 350px;
@@ -33,5 +27,63 @@ body {
   flex-direction: column;
   text-align: center;
   align-items: center;
+  justify-content: start;
+}
+
+.header .head-Wrap .head-Tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+  height: 20%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header .head-Wrap .copy-Text-Wrap {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+}
+
+.header .head-Wrap .copy-Text-Wrap .number-Input {
+  background-color: #bed754;
+  height: 20px;
+  width: 50%;
+  border: solid #191919 2px;
+  border-radius: 5px;
+  color: #191919;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 2px;
+}
+
+.header .head-Wrap .copy-Text-Wrap .copy-Pass-Btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border: none;
+  color: #bed754;
+  background-color: #191919;
+}
+
+.header .head-Wrap .copy-Text-Wrap .copy-Pass-Btn:hover {
+  color: #191919;
+  background-color: #bed754;
+}
+
+.header .head-Wrap .copy-Text-Wrap .copy-Pass-Btn:active {
+  color: #bed754;
+  background-color: #191919;
 }

@@ -23,12 +23,6 @@ body {
   color: $colorThree;
   height: 100vh;
 
-  .head-Tile {
-    font-size: 25px;
-    font-weight: 600;
-    padding: 5px;
-  }
-
   .head-Wrap {
     height: 600px;
     width: 350px;
@@ -39,6 +33,64 @@ body {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: start;
+
+    .head-Tile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 600;
+      height: 20%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .copy-Text-Wrap {
+      width: 100%;
+      height: 10%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      text-align: center;
+      align-items: center;
+
+      .number-Input {
+        background-color: #bed754;
+        height: 20px;
+        width: 50%;
+        border: solid $colorOne 2px;
+        border-radius: 5px;
+        color: $colorOne;
+        font-family: inherit;
+        font-weight: 600;
+        padding: 2px;
+      }
+
+      .copy-Pass-Btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        border: none;
+        color: $colorThree;
+        background-color: $colorOne;
+      }
+
+      .copy-Pass-Btn:hover {
+        color: $colorOne;
+        background-color: $colorThree;
+      }
+
+      .copy-Pass-Btn:active {
+        color: $colorThree;
+        background-color: $colorOne;
+      }
+    }
   }
 }
