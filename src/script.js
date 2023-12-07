@@ -11,12 +11,11 @@ var checkedBoxes = document.querySelectorAll("#checked-Box");
 var copyPassBtn = document.getElementsByClassName("copy-Pass-Btn")[0];
 var generatePassBtn = document.getElementsByClassName("generate-Pass")[0];
 //gelobal variables
-var upperCase = false;
-var LowerCase = false;
-var numbersCase = false;
-var symbolsCase = false;
-var CheckedBoxTrue = 1;
-var checkArr = [];
+var generatedPassword;
+var lengthOfPassWord;
+var loowsArr = [];
+var pushableArry = [];
+var typesCount = 0;
 // functions
 // copy password function
 var copyPassword = function () {
@@ -26,44 +25,44 @@ var copyPassword = function () {
     navigator.clipboard.writeText(copyBox.value);
     console.log(copyBox.value);
 };
-// generatePassword function
-var generatePassword = function (boxCheck) {
-    console.log(boxCheck.checked);
-    console.log(boxCheck.value);
-    console.log(CheckedBoxTrue);
-    console.log(checkArr);
-};
-// event lisnters
-copyPassBtn.addEventListener("click", copyPassword);
+// Genorate Random Password Function
+function GenorateRandomPassword() {
+    // Initialize outside the loop for concatenation
+    generatedPassword = "";
+    for (var i = 0; i < lengthOfPassWord; i += typesCount) {
+        loowsArr.forEach(function (type) {
+            var funcName = type;
+            if (randomFunc[funcName] && typeof randomFunc[funcName] === "function") {
+                generatedPassword += randomFunc[funcName]();
+            }
+        });
+    }
+    var finalgeneratedPassword = generatedPassword.slice(0, lengthOfPassWord);
+    copyBox.value = finalgeneratedPassword;
+}
 generatePassBtn.addEventListener("click", function () {
-    CheckedBoxTrue = 1;
-    checkArr = [];
+    lengthOfPassWord = lengthOfPass.value;
+    loowsArr = [];
+    pushableArry = [];
     for (var _i = 0, checkedBoxes_1 = checkedBoxes; _i < checkedBoxes_1.length; _i++) {
         var boxCheck = checkedBoxes_1[_i];
         if (boxCheck.checked) {
-            generatePassword(boxCheck);
-            checkArr.push("".concat(boxCheck.value));
-            CheckedBoxTrue++;
+            pushableArry.push("".concat(boxCheck.value));
         }
     }
+    loowsArr = pushableArry;
+    typesCount = loowsArr.length;
+    GenorateRandomPassword();
+    console.log("type count length", typesCount, "our loows arry", loowsArr);
 });
-var loowsArr = [
-    "upperCase",
-    "LowerCase",
-    "numbersCase",
-    "symbolsCase",
-];
-// "LowerCase",
-// "numbersCase",
-// "symbolsCase",
-var lengthOfPassWord = 21;
-var typesCount = 4;
+// The object 'randomFunc' associates descriptive keys with corresponding functions,
 var randomFunc = {
     upperCase: generateUpperCase,
     LowerCase: generateLowerCase,
-    numbersCase: generatenumbersCase,
-    symbolsCase: generatesymbolsCase,
+    numbers: generatenumbersCase,
+    symbols: generatesymbolsCase,
 };
+// our random created number / symbols functions :
 function generateUpperCase() {
     return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
@@ -77,21 +76,3 @@ function generatesymbolsCase() {
     var symbols = "!@#$%^&*(){}[]=<>/,.";
     return symbols[Math.floor(Math.random() * symbols.length)];
 }
-var generatedPassword;
-function random() {
-    // Initialize outside the loop for concatenation
-    generatedPassword = "";
-    for (var i = 0; i < lengthOfPassWord; i += typesCount) {
-        loowsArr.forEach(function (type) {
-            var funcName = type;
-            if (randomFunc[funcName] && typeof randomFunc[funcName] === "function") {
-                generatedPassword += randomFunc[funcName]();
-            }
-        });
-    }
-    console.log(generatedPassword); // Print the concatenated result after the loop
-    var finalgeneratedPassword = generatedPassword.slice(0, lengthOfPassWord);
-    console.log(finalgeneratedPassword);
-    copyBox.value = finalgeneratedPassword;
-}
-random();
