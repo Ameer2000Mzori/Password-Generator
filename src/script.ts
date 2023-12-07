@@ -64,9 +64,14 @@ let loowsArr: string[] = [
   "symbolsCase",
 ];
 
-let lengthOfPassWord: number = 1;
+// "LowerCase",
+// "numbersCase",
+// "symbolsCase",
 
-const randomFunc = {
+let lengthOfPassWord: number = 21;
+let typesCount: number = 4;
+
+let randomFunc = {
   upperCase: generateUpperCase,
   LowerCase: generateLowerCase,
   numbersCase: generatenumbersCase,
@@ -90,23 +95,23 @@ function generatesymbolsCase() {
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
+let generatedPassword;
+
 function random() {
   // Initialize outside the loop for concatenation
-  for (let i = 0; i < lengt; i++) {
-    genoratePasswords();
+  generatedPassword = "";
+  for (let i = 0; i < lengthOfPassWord; i += typesCount) {
+    loowsArr.forEach((type) => {
+      const funcName = type;
+      if (randomFunc[funcName] && typeof randomFunc[funcName] === "function") {
+        generatedPassword += randomFunc[funcName]();
+      }
+    });
   }
-}
-
-function genoratePasswords() {
-  let generatedPassword = "";
-  loowsArr.forEach((type) => {
-    const funcName = type;
-
-    if (randomFunc[funcName] && typeof randomFunc[funcName] === "function") {
-      generatedPassword += randomFunc[funcName]();
-    }
-  });
   console.log(generatedPassword); // Print the concatenated result after the loop
-  copyBox.value = generatedPassword;
+  let finalgeneratedPassword = generatedPassword.slice(0, lengthOfPassWord);
+  console.log(finalgeneratedPassword);
+  copyBox.value = finalgeneratedPassword;
 }
+
 random();
