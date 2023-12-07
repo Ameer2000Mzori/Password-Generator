@@ -30,11 +30,17 @@
         <div class="choice-Wrap">
           <div class="box-Choice password-Length box-Choice">
             <p>Password Length</p>
-            <input class="length-Of-Pass" type="number" />
+            <input
+              class="length-Of-Pass"
+              type="number"
+              min="6"
+              max="20"
+              value="6"
+            />
           </div>
           <div class="box-Choice upperCase-Box">
             <p>Include UpperCase letters ?</p>
-            <input class="upperCase-Check" type="checkbox" />
+            <input class="upperCase-Check" type="checkbox" checked />
           </div>
           <div class="box-Choice LowerCase-Box">
             <p>Include LowerCase letters ?</p>
